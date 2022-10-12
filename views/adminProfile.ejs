@@ -1,0 +1,83 @@
+<%- include("header.ejs") -%>
+<div class="composehdr">
+     
+  <div class="adminhdr">
+    <h1><i class="fa-solid fa-screwdriver-wrench"></i> Admin </h1>
+  </div>
+  <div class="chdrbtn">
+    <h3><a href="/login">Control Pannel</a>
+    </h3>    
+    </div>
+  <div class="chdrbtn">
+    <form action="/logout" method="post">
+      <button class="btn btn-primary" type="submit">Logout</button>
+    </form>
+  </div>
+
+
+</div>
+  <h3 class="red text-center">
+    <%= signupMsg %>
+  </h3>
+  <div class="signup-form ">
+    <form action="/reset-admin-profile" method="post" autocomplete="off">
+      <div class="text-center"><i class="fa-solid fa-user-lock fa-3x"></i></div>
+      <h3 class="text-center"><i class="fa-solid fa-hammer">.</i>  Reset Admin Profile  <i class="fa-solid fa-hammer"></i>.</h3>
+      <p class="hint-text">All fields are mandatory.</p>
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="password" placeholder="Current Password"
+             required="required" autocomplete="off"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="email" placeholder="Email-id"
+             required="required" autocomplete="off"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name"
+             required="required" autocomplete="off"></div>
+        </div>
+      </div>   
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name"
+             required="required" autocomplete="off"></div>
+        </div>
+      </div>  
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="git" placeholder="Git Link"
+              autocomplete="off">
+            * Provide value "null" if not avalable. 
+            </div>
+        </div>
+      </div> 
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="new_password" placeholder="New Password"
+             required="required" autocomplete="off"></div>
+        </div>
+      </div> 
+      <div class="form-group">
+        <div class="row">
+          <div class="col"><input type="text" class="form-control" name="confirm_new_password" placeholder="Confirm New Password"
+             required="required" autocomplete="off"></div>
+        </div>
+      </div> 
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-lg btn-block">Reset Profile</button>
+      </div>
+
+      
+    </form>
+
+  </div>
+
+
+
+
+  <%- include("footer.ejs") -%>

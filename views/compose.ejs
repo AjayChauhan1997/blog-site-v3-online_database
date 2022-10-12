@@ -1,0 +1,84 @@
+<%- include("header.ejs") -%>
+  <div class="compose">
+    <div class="composehdr">
+     
+      <div class="adminhdr">
+        <h1><i class="fa-solid fa-screwdriver-wrench"></i> Admin </h1>
+      </div>
+      <div class="chdrbtn">
+        <h3><a href="/reset-admin-profile"><i class="fa-solid fa-user"></i> Edit Profile</a>
+        </h3>  
+
+        </div>
+      <div class="chdrbtn">
+        <form action="/logout" method="post">
+          <button class="btn btn-primary" type="submit">Logout</button>
+        </form>
+      </div>
+
+
+    </div>
+    <h1>
+      <%= tittle %>
+    </h1>
+    <form action="/" method="post">
+      <div class="form-floating"><label for="floatingTextarea">Tittle</label>
+        <textarea class="form-control" name="composetittle" placeholder="Give a tittle"
+          id="floatingTextarea"></textarea>
+
+      </div>
+
+      <div class="form-floating"><label for="floatingTextarea2">Post</label>
+        <textarea name="composepost" class="form-control" placeholder="Leave a post here" id="floatingTextarea2"
+          style="height: 100px"></textarea>
+
+      </div>
+      <button type="submit" class="btn btn-primary">Publish</button>
+    </form>
+
+    <div class="space">
+      <h1>
+        <%= composeheading2 %>
+      </h1>
+      <h3 class="red">
+        <%= msg1 %>
+      </h3>
+      <h3 class="green">
+        <%= msg2 %>
+      </h3>
+
+      <% allPost.forEach(function(renderPost){ %>
+
+
+
+        <div class="divcolor col-sm-5">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">
+                <%= renderPost.postTittle.substring(0,30) %>
+              </h3>
+              <p class="card-text">
+                <%= renderPost.postArticle.substring(0,100) %>
+              </p>
+
+              <form action="/check" method="post" class="item">
+
+                <button class="btn1" type="submit" name="button" value=<%=renderPost._id %> >...read more</button>
+
+              </form>
+              <form action="/delete" method="post" class="item">
+
+                <button class="btn1 del" type="submit" name="button" value=<%=renderPost._id %> >Delete Post</button>
+
+              </form>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <% }); %>
+    </div>
+  </div>
+  <%- include("footer.ejs") -%>

@@ -1,0 +1,21 @@
+<%- include("header.ejs") -%>
+
+
+<h1 class="text-center">Contact</h1>
+<strong>
+<p>Name  : <%= fname %> <%= lname %> </p>
+<p>Email : <%= email %>             </p>
+
+
+
+ <% if(   git.length >8){         %>
+    <P>Git:<%=  git     %>    </P>
+
+    <%   }  %>
+       
+</strong>
+
+    
+<%- include("footer.ejs") -%>
+  
+   
